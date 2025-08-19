@@ -2,7 +2,7 @@
 
 **A Dockerized FastAPI + Vite/React app for document intelligence: ingest → OCR/parse → sectionize → index → answer with an LLM → (optional) TTS. Frontend is built once and served statically by the backend.**
 
-## 🚀 Special Deep + Narrate Mode: Smart + Deep + Narrate
+## Special Deep + Narrate Mode: Smart + Deep + Narrate
 
 **Smart**: Grounds answers in the exact passages from your PDFs for precise, cited responses you can trust.
 
