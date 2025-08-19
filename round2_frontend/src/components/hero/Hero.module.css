@@ -1,0 +1,220 @@
+.heroContainer{
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* margin-top: 5rem; */
+    padding: 0 4rem;
+    flex: 1;
+    height: 100vh;
+}
+
+
+.heroContent{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var(--clr-text-primary);
+    flex: 1;
+    background-color: transparent;
+    height: 500px;
+    font-family: var(--ff-content);
+}
+
+
+.heading{
+    font-family: var(--ff-headings);
+    font-size: var(--font-size-xxl);
+}
+
+.heading  div:first-child{
+    letter-spacing: 1px;
+    font-size: calc(var(--font-size-xxl) + 3rem);
+}
+
+.subHeading{
+    font-size: var(--font-size-md);
+    opacity: 0.6;
+}
+
+.ctaBtns{
+    display: flex;
+    gap: 1rem;
+}
+
+.heroIllus{
+    flex: 0;
+    min-width: 800px;
+    background-color: lighgrey;
+    position: relative;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+/* .hotAirBaloon{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 700px;
+    width: auto;
+} */
+
+
+.heroImg{
+    position: absolute;
+    pointer-events: none;
+    /* --scale-animation-delay: 1s; */
+}
+
+
+.heroIllus > img:not([class="skyline"]){
+    margin-top: 20vh;
+}
+
+
+
+.hotAirBaloon{
+    height: 80vh;
+    --baloon-y-offset: -22%;
+    --baloon-x-offset: 30%;
+    right: 0;
+    transform: translateX(var(--baloon-x-offset));
+    /* animation: swingingBaloon 8s alternate infinite cubic-bezier(0.65, 0, 0.35, 1), scaleUp 1s 1 forwards cubic-bezier(0.5, 1, 0.89, 1);
+    animation-delay: 2.5s, var(--scale-animation-delay);
+    animation-composition: additive; */
+    animation: scaleUp 1s forwards cubic-bezier(0.5, 1, 0.89, 1), 
+    swingingBaloon 8s 1s alternate infinite cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+
+
+@keyframes scaleUp {
+    from{
+    
+        transform: translateX(-40%) scale(0);
+    }
+    to{
+        transform: translate(var(--baloon-x-offset), var(--baloon-y-offset)) scale(1);
+    }
+}
+
+@keyframes swingingBaloon {
+    0% {
+        transform-origin: 50% 20%;
+        /* Add scale(1) here */
+        transform: rotateZ(0deg) translate(var(--baloon-x-offset), var(--baloon-y-offset)) scale(1);
+    }
+
+    100% {
+        /* And here */
+        transform: rotateZ(6deg) translate(var(--baloon-x-offset), var(--baloon-y-offset)) scale(1);
+    }
+}
+
+.skyline{
+    bottom: 0;
+    left: 0;
+    height: 400px;
+    transform: translateX(5%);
+}
+
+.cloud{
+    height: 90vh;
+    /* transform: translate(0, -50%); */
+    --cloud-1-y-offset: -50%;
+    --cloud-1-x-offset: 30%;
+    /* transform: translate(var(--cloud-1-x-offset), var(--cloud-1-y-offset)); */
+    right: 0;
+    /* animation: movingCloudXOnly 10s alternate infinite cubic-bezier(0.68, -0.6, 0.32, 1.6),  scaleDownCloud1 0.6s forwards 1 cubic-bezier(0.5, 1, 0.89, 1);
+    animation-delay: 2.5s, var(--scale-animation-delay); */
+    animation: scaleDownCloud1 0.6s forwards cubic-bezier(0.5, 1, 0.89, 1), 
+    movingCloudXOnly 10s 0.6s alternate infinite cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+
+
+@keyframes movingCloudXOnly {
+    from{
+        transform: translateX(30%) translateY(var(--cloud-1-y-offset));
+    }
+    to{
+        transform: translateX(32%) translateY(var(--cloud-1-y-offset));
+    }
+}
+
+@keyframes scaleDownCloud1 {
+    from{
+    
+        transform: translateX(-40%) scale(2);
+    }
+    to{
+        transform: translateX(var(--cloud-1-x-offset)) translateY(var(--cloud-1-y-offset)) scale(1) ;
+    }
+}
+
+.cloud2{
+    height: 100vh;
+    --cloud-2-x-offset: 20%;
+    --cloud-2-y-offset: -40%;
+    right: 0;
+    animation: scaleDownCloud2 0.6s forwards cubic-bezier(0.5, 1, 0.89, 1), 
+               movingCloudXYCloud2 8s 0.6s alternate infinite cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+
+
+@keyframes movingCloudXYCloud2{
+    from{
+        transform: translate(20%, -40%);
+    }
+    to{
+        transform: translate(20%, -42%);
+    }
+}
+
+@keyframes scaleDownCloud2 {
+    from{
+    
+        transform: translateX(-40%) scale(2);
+    }
+    to{
+        transform: translateX(var(--cloud-2-x-offset)) translateY(var(--cloud-2-y-offset)) scale(1) ;
+    }
+}
+
+.cloud3{
+    height: 100vh;
+    --cloud-2-x-offset: 20%;
+    --cloud-2-y-offset: -35%;
+    right: 0;
+    animation: scaleDownCloud3 0.6s forwards cubic-bezier(0.5, 1, 0.89, 1),
+               movingCloudXYCloud3 8s 0.6s alternate infinite cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+@keyframes movingCloudXYCloud3{
+    from{
+        transform: translate(20%, -35%);
+    }
+    to{
+        transform: translate(23%, -36%);
+    }
+}
+
+@keyframes scaleDownCloud3 {
+    from{
+    
+        transform: translateX(-40%) scale(2);
+    }
+    to{
+        transform: translateX(var(--cloud-3-x-offset)) translateY(var(--cloud-3-y-offset)) scale(1) ;
+    }
+}
+
+.moon{
+    height: 40vh;
+    left: 0;
+    transform: translate(-50%, 70%);
+}
+
+
+

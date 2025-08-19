@@ -1,0 +1,12 @@
+.empty{ opacity: .65; text-align: center; padding: .6rem; }
+.list{ display: grid; gap: .6rem; }
+.item{
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel-2);
+  padding: .65rem .75rem;
+}
+.meta{ display: flex; gap: .6rem; align-items: baseline; flex-wrap: wrap; }
+.title{ font-weight: 700; font-size: .95rem; }
+.page, .score{ opacity: .7; font-size: .9rem; }
+.snippet{ margin-top: .25rem; opacity: .95; line-height: 1.35; }

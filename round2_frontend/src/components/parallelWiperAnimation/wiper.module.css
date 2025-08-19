@@ -1,0 +1,15 @@
+.wiper{
+    background-color: black;
+    animation: wipePage 0.6s 1 cubic-bezier(0.64, 0, 0.78, 0);
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes wipePage {
+    from{
+        transform: scaleX(1);
+    }
+    to{
+        transform: scaleX(0);
+    }
+}
