@@ -1,0 +1,27 @@
+# Never send env files
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Node
+node_modules
+dist
+dist-ssr
+
+# Python
+__pycache__/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+
+# Git / Editors
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
