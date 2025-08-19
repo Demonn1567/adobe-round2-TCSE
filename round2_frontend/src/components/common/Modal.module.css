@@ -1,0 +1,49 @@
+.backdrop{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.35);
+  display: grid; place-items: center;
+  z-index: 999;
+}
+
+.sheet{
+  width: 92vw;
+  background: var(--clr-bg);
+  color: var(--clr-text-primary);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  overflow: hidden;
+  animation: genie 0.6s 1 cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes genie {
+  from{
+    transform: translateX(-50%) scale(0);
+  }
+  to{
+    transform: translateX(0%) scale(1);
+  }
+}
+
+.header{
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.title{
+  font-family: var(--ff-headings);
+  font-size: 1.25rem;
+  letter-spacing: .3px;
+}
+
+.close{
+  all: unset;
+  cursor: pointer;
+  opacity: .7;
+  font-size: 1rem;
+  padding: .25rem .4rem;
+  border-radius: 8px;
+}
+.close:hover{ background: rgba(255,255,255,.06); opacity: 1; }
+
+.body{ padding: 1rem 1.25rem; }

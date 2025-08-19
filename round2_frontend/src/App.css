@@ -1,0 +1,40 @@
+body{
+  background: linear-gradient(16deg,var(--clr-gradient-ClrOne) 0%, var(--clr-gradient-ClrTwo) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mainContainer{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  
+}
+
+
+.heroParent{
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+
+.navHeroContainer{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSection {
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding-block: clamp(2rem, 6vh, 5rem);
+}
+
+.homeMax {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 32px);
+}

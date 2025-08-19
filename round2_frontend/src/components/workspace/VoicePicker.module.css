@@ -1,0 +1,16 @@
+.wrap{
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.16);
+  padding: .25rem .5rem;
+  border-radius: 10px;
+}
+.label{ opacity: .75; font-size: .9rem; }
+.select{
+  background: transparent;
+  border: 0;
+  color: var(--clr-text-primary);
+  padding: .2rem .1rem;
+  outline: none;
+}
+.wrap[aria-disabled="true"]{ opacity: .55; }

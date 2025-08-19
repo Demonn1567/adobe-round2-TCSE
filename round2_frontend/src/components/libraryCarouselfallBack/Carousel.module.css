@@ -1,0 +1,138 @@
+
+.mainContainer {
+    font-family: var(--ff-headings);
+    padding: 0 4rem;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardContainer {
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    --perspective-val: 200px;
+    --card-rotation: 10deg;
+    --card-border-radius: 16px;
+}
+
+.cardContainer::-webkit-scrollbar {
+    display: none; 
+}
+
+.card {
+    height: 400px;
+    min-width: 280px;
+    animation-name: changePerspective;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: opacity 0.2s;
+    perspective-origin: top left;
+    margin-left: -10px;
+    cursor: pointer;
+}
+
+.card:first-child {
+    margin-left: 0;
+}
+
+@keyframes changePerspective {
+    from {
+        transform: perspective(1px) rotateY(0deg);
+    }
+    to {
+        transform: perspective(var(--perspective-val)) rotateY(var(--card-rotation));
+    }
+}
+
+.cardContent {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--card-border-radius);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    position: relative;
+    align-items: center;
+    background-color: rgb(214, 203, 246);
+}
+
+.card:hover {
+    z-index: 10;
+}
+
+.card:hover .cardContent {
+    transform: perspective(var(--perspective-val)) rotateY(calc(-1 * var(--card-rotation))) scale(1.1);
+}
+
+.cardContainer:hover > .card:not(:hover) {
+    opacity: 0.2;
+}
+
+.cardImg {
+    border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
+    height: 100%;
+    width: 70%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightgrey;
+    flex: 1;
+}
+
+.cardDescription {
+    writing-mode: sideways-lr;
+    text-orientation: mixed;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 1.5rem 0.5rem;
+    position: relative;
+}
+
+.cardDescription::before {
+    bottom: 0;
+    content: "";
+    width: 70%;
+    height: 12px;
+    background-color: rgb(106 75 255);
+    position: absolute;
+}
+
+.cardTitle {
+    font-size: 28px;
+}
+
+.cardDate {
+    font-family: var(--ff-component-content);
+    font-size: 20px;
+}
+
+.arrow {
+    position: absolute;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 20; 
+    transition: opacity 0.2s;
+}
+
+.backArrow {
+    left: 0;
+}
+
+.forwardArrow {
+    right: 0;
+}
+
+.arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}

@@ -1,0 +1,11 @@
+.row{ display: flex; align-items: center; gap: .6rem; width: 100%; }
+.audio{ width: 100%; }
+.dl{
+  text-decoration: none;
+  background: rgba(255,255,255,.06);
+  padding: .35rem .6rem;
+  border-radius: 10px;
+  color: var(--clr-text-primary);
+  border: 1px solid rgba(255,255,255,.12);
+  white-space: nowrap;
+}

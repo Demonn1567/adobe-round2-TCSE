@@ -1,0 +1,14 @@
+.btn{
+    display: flex;
+    color: var(--clr-btn);
+    font-family: inherit;
+    font-size: var(--font-size-md);
+    gap: 6px;
+    padding: 0.5rem 1rem;
+    border-radius: 14px;
+    border: 3px solid hsla(var(--clr-btn-bg));
+    background-color: hsla(var(--clr-btn-bg));
+    font-family: var(--ff-component-content);
+    box-shadow: 0  0.06em 0.5em hsla(204,42%,16%,0.24), 0 0.12em 0.3em -0.1em hsla(204,42%,8%,0.24), inset 0 0 0.06em 0.03em hsla(var(--clr-btn-bg),0.24), inset 0 0.1em 0.2em 0em hsla(var(--clr-btn-bg),0.24), inset 0 0.1em 0.4em hsla(204,42%,8%,0.24);
+}
+
